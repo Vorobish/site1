@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block pagename %}
+<h1>{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+<div id="main">
+    {% for menu in page_obj %}
+    <div>
+        <h2>{{ menu.name_food }}</h2>
+        <p>Вес: {{ menu.weight_gr }}, Цена: {{ menu.price }}</p>
+        <img src='{% static menu.image %}' style="width: 250px; height: 250px;">
+        <p style="width: 250px">Состав: {{ menu.ingredients }}</p>
+        {% for key, value in basket_list.items %}
+        {% if key == menu.id %}
+        <p>Добавлено в корзину {{ value }} шт</p>
+        {% endif %}
+        {% endfor %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" id="menu.id" name="menu.id" maxlength="10" value="{{ menu.id }}" required>
+            <button type="submit" name="add">Добавить в корзину</button>
+            <button type="submit" name="del">-1</button>
+        </form>
+
+    </div>
+    {% endfor %}
+</div>
+<div class="pagination">
+    {% if page_obj.has_other_pages %}
+    <p><small>
+        <nav aria-label="Page navigation">
+            {% if page_obj.has_previous %}
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">Назад</span>
+            </a>
+            {% else %}
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">Назад</span>
+            </a>
+            {% endif %}
+            {% for i in page_obj.paginator.page_range %}
+            {% if page.obj.number == i %}
+            <a class="page-link" href="#">{{ i }}</a>
+            {% else %}
+            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">Вперед</span>
+            </a>
+            {% else %}
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">Вперед</span>
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </small></p>
+    <form method="post">
+        {% csrf_token %}
+        <label for="k">Количество выводимых товаров на странице</label>
+        <input type="number" id="k" name="k" maxlength="2" value="{{ k }}" required>
+        <button type="submit" name="pag">Установить</button>
+    </form>
+</div>
+{% endblock %}
