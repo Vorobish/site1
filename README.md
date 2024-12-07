@@ -22,7 +22,7 @@
 
 ### 2. Меню (для всех пользователей)
 
-![alt text/image.png](image-1.png)
+[!](https://github.com/Vorobish/site1/blob/master/image.png/image-1.png)
 
 ### 3. Корзина (для всех пользователей)
 
