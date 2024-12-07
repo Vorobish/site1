@@ -18,11 +18,11 @@
 
 ### 1. Главная страница (для всех пользователей)
 
-![https://github.com/Vorobish/site1/blob/master/%22image.png%22](image.png)   
+ 
 
 ### 2. Меню (для всех пользователей)
 
-[!](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-1.png)
+![2](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-1.png)
 
 ### 3. Корзина (для всех пользователей)
 
