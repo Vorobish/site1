@@ -22,7 +22,7 @@
 
 ### 2. Меню (для всех пользователей)
 
-[!](https://github.com/Vorobish/site1/blob/master/image.png/image-1.png)
+[!](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-1.png)
 
 ### 3. Корзина (для всех пользователей)
 
