@@ -11,6 +11,9 @@ from .models import *
 
 
 def base(request):
+    '''
+        Главная страница
+    '''
     title = 'Главная страница'
     content = 'Для выбора товаров перейдите в Меню'
     if request.user.is_authenticated:
@@ -26,17 +29,26 @@ def base(request):
 
 
 class LoginUser(LoginView):
+    '''
+        Класс авторизации
+    '''
     form_class = LoginForm
     template_name = 'login.html'
     extra_context = {'title': 'Авторизация'}
 
 
 def logout_user(request):
+    '''
+        Функция выхода из ЛК
+    '''
     logout(request)
     return HttpResponseRedirect(reverse('login'))
 
 
 def register(request):
+    '''
+        Регистрация пользователя
+    '''
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
@@ -58,6 +70,9 @@ k = 3  # кол-во объектов на странице
 
 
 def menu(request):
+    '''
+        Страница Меню - выбор товаров
+    '''
     title = 'Меню'
     global k
     global basket_list
@@ -96,6 +111,9 @@ basket_list = {}
 
 
 def basket(request):
+    '''
+        Страница корзина - оформление заказа
+    '''
     global basket_list
     list_info = {}
     res = 0
@@ -165,6 +183,9 @@ order_id = None
 
 
 def orders(request):
+    '''
+        Страница с заказами пользователя
+    '''
     global order_id
     orderss = Orders.objects.filter(user_id=request.user.id).order_by('-id')
     if request.method == 'POST':
@@ -179,6 +200,9 @@ def orders(request):
 
 
 def order(request):
+    '''
+        Страница с данными о конкретном заказе пользователя
+    '''
     order_id = request.GET.get('order_id')
     summa = Orders.objects.filter(id=order_id).values_list('summa', flat=True)[0]
     delivery = Orders.objects.filter(id=order_id).values_list('delivery', flat=True)[0]

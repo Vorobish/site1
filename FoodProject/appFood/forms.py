@@ -10,6 +10,9 @@ class LoginForm(AuthenticationForm):
 
 
 class CustomUserCreationForm(UserCreationForm):
+    '''
+        Класс регистрации пользователя
+    '''
     username = forms.CharField(label='Имя пользователя', min_length=3, max_length=150)
     email = forms.EmailField(label='Электронная почта')
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput)

@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Menu(models.Model):
+    '''
+        Меню - товар в меню
+    '''
     name_food = models.CharField(max_length=30)
     category = models.ForeignKey('Category', on_delete=models.PROTECT)
     weight_gr = models.IntegerField()
@@ -18,6 +21,9 @@ class Menu(models.Model):
 
 
 class Category(models.Model):
+    '''
+        Категория товара из меню
+    '''
     name_category = models.CharField(max_length=30)
     image = models.CharField(max_length=200)
     time_create = models.DateTimeField(auto_created=True)
@@ -28,6 +34,9 @@ class Category(models.Model):
 
 
 class Orders(models.Model):
+    '''
+        Заказ
+    '''
     Type_delivery = [
         ('avto', 'доставка'),
         ('self', 'самовывоз'),
@@ -62,6 +71,9 @@ class Orders(models.Model):
 
 
 class OrderIn(models.Model):
+    '''
+        Состав заказа
+    '''
     order_id = models.IntegerField(null=True)
     menu_id = models.IntegerField(null=True)
     count = models.IntegerField(null=True)
