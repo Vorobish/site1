@@ -18,7 +18,7 @@
 
 ### 1. Главная страница (для всех пользователей)
 
- 
+![1](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image.png) 
 
 ### 2. Меню (для всех пользователей)
 
@@ -26,27 +26,27 @@
 
 ### 3. Корзина (для всех пользователей)
 
-![alt text](image-2.png)
+![3](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-2.png)
 
 ### 4. Заказы (для авторизованных пользователей)
 
-![alt text](image-3.png)
+![4](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-3.png)
 
 ### 5. Заказ (для авторизованных пользователей, отсутствует в основном меню, открывается только по переходу из страницы «Заказы»)
 
-![alt text](image-4.png)
+![5](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-4.png)
 
 ### 6. Авторизация, кнопка «Войти» (для неавторизованных пользователей)
 
-![alt text](image-5.png)
+![6](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-5.png)
 
 ### 7. Регистрация, кнопка «Зарегистрироваться» (для неавторизованных пользователей)
 
-![alt text](image-6.png)
+![7](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-6.png)
 
 ### 8. Кнопка «Выйти» - не страница, видна только для авторизованных пользователей
 
-![alt text](image-7.png)
+![8](https://raw.githubusercontent.com/Vorobish/site1/refs/heads/master/image.png/image-7.png)
 
 # Как запустить
   
