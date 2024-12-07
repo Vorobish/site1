@@ -18,7 +18,7 @@
 
 ### 1. Главная страница (для всех пользователей)
 
-![alt text](image.png)   
+![https://github.com/Vorobish/site1/blob/master/%22image.png%22](image.png)   
 
 ### 2. Меню (для всех пользователей)
 
